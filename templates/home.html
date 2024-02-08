@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #5c6bc0;
+            --accent-color: #ff4081;
+            --background-color: #e8eaf6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("{% static 'DiabetesPredictionFixed/images/OIG4.jpeg'%}");
+            background-size: cover;
+            color: var(--primary-color);
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            animation: slide-up 0.5s ease;
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        input[type=submit] {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        input[type=submit]:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DIABETES PREDICTION SYSTEM</h1>
+        <h2>by rezkiiyd</h2>
+        <form action="predict">
+            <input type="submit" value="GO">
+        </form>
+    </div>
+</body>
+</html>
